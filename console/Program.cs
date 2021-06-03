@@ -1,7 +1,6 @@
 ﻿using System;
-using System.IO;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+using System.Threading;
+using business_layer;
 
 namespace console
 {
@@ -9,29 +8,14 @@ namespace console
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Starting up...");
-            AppStartup().Run();
-        }
-        
-        static IHost AppStartup()
-        {
-            var builder = new ConfigurationBuilder();
-            BuildConfig(builder);
+            IWeatherService weatherService = new WeatherServiceImpl();
 
-            var host = Host.CreateDefaultBuilder()
-                .ConfigureServices((context, services) => {
+            var cmd = new GetWeatherCommand(weatherService);
 
-                })
-                .Build();
-
-            return host;
-        }
-        
-        static void BuildConfig(IConfigurationBuilder builder)
-        {
-            builder.SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddEnvironmentVariables();
+            while (true) {
+                cmd.Execute();
+                Thread.Sleep(1000 * 10);
+            }
         }
     }
 }

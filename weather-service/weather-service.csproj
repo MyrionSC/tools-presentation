@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>business_layer</RootNamespace>
+    <RootNamespace>weather_service</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

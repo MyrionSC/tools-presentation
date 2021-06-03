@@ -7,7 +7,12 @@
 
   <ItemGroup>
     <PackageReference Include="MappingGenerator" Version="2021.6.10" />
-    <PackageReference Include="Microsoft.Extensions.Hosting" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\business-layer\business-layer.csproj" />
+    <ProjectReference Include="..\common\common.csproj" />
+    <ProjectReference Include="..\weather-service\weather-service.csproj" />
   </ItemGroup>
 
 </Project>
