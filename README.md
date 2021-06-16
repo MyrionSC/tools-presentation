@@ -21,5 +21,5 @@ Mine grundsten: Rider / Ideavim
 
 ### Appendix
 
-https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_complete
-curl -X GET --header 'Accept: application/json' 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=57.046707&lon=9.935932'
+- https://api.met.no/weatherapi/locationforecast/2.0/documentation#!/data/get_complete
+- curl -X GET --header 'Accept: application/json' 'https://api.met.no/weatherapi/locationforecast/2.0/complete?lat=57.046707&lon=9.935932'
