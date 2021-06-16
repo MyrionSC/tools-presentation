@@ -13,7 +13,9 @@ namespace business_layer
 
         public void Execute()
         {
-            Console.WriteLine("execute weather command");
+            var weatherDTO = _weatherService.GetCurrentWeather();
+
+            Console.WriteLine(weatherDTO.DegreesCelsius);
         }
     }
 }

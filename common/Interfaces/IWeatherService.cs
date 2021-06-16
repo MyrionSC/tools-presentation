@@ -1,6 +1,9 @@
-﻿namespace business_layer
+﻿using common.DTO;
+
+namespace business_layer
 {
     public interface IWeatherService
     {
+        WeatherDTO GetCurrentWeather();
     }
 }
